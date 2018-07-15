@@ -22,7 +22,7 @@ class Editbook extends React.Component{
 
 editBook = (e) => {
 
-   const postUrl = `http://localhost:3001/books/${this.state.book.id}`
+   const postUrl = `https://book-watcher.herokuapp.com/books/${this.state.book.id}`
 
    let content = {
        image: this.state.book.image,

@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   deleteBook = (e) => {
-    const url = `http://localhost:3001/books/${e.target.id}`
+    const url = `https://book-watcher.herokuapp.com/books/${e.target.id}`
     console.log(url);
     fetch(url, {
       method: 'delete',
@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   handleBookUpdate = (e) => {
-    return fetch("http://localhost:3001/books")
+    return fetch("https://book-watcher.herokuapp.com/books")
     .then(response => response.json())
 
     .then(books => {

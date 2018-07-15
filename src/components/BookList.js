@@ -24,7 +24,7 @@ class BookList extends React.Component{
 
  addBook = (e) => {
 
-    const postUrl = `http://localhost:3001/books`
+    const postUrl = `https://book-watcher.herokuapp.com/books`
 
     let content = {
         image: this.state.image,

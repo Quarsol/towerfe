@@ -16,22 +16,45 @@ class App extends Component {
     }
   }
 
+  deleteBook = (e) => {
+    const url = `http://localhost:3001/books/${e.target.id}`
+    console.log(url);
+    fetch(url, {
+      method: 'delete',
+    })
+    .then(resp => resp.json())
+    .then(books => {
+      this.setState(
+        {books: books.books}
+      )
+    })
+    .catch(function(error) {
+      console.log('error')
+    })
+  }
+
   componentDidMount(){
-    fetch("http://localhost:3001/books")
+    return this.handleBookUpdate()
+  }
+
+  handleBookUpdate = (e) => {
+    return fetch("http://localhost:3001/books")
     .then(response => response.json())
+
     .then(books => {
       this.setState({
-        books: books
+        books: books.books
       })
     })
   }
+
 
   render() {
     return (
       <div className="App">
         <Header />
         <main>
-          <BookList books={this.state.books}/>
+          <BookList books={this.state.books} deleteBook={this.deleteBook} handleBookUpdate={this.handleBookUpdate}/>
         </main>
         <Footer />
       </div>

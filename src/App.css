@@ -26,3 +26,25 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* Header */
+
+header {
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: 25% 50% 15%;
+  grid-template-rows: 50% 50%;
+  padding-top: 10px;
+}
+
+/* Footer */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  padding: 5px;
+}
+
+footer small {
+  margin: 0 auto;
+}
